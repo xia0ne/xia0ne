@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="zh"><head><meta charset="UTF-8" />
+<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="generator" content="Hugo 0.95.0" /><link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Fira+Code:wght@400;500" /><title>Web | DSRBLOG</title><meta name="author" content="DSRKafuU" /><meta name="description" content="计算机网络笔记。" /><link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@1.0.0/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@1.0.0/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@1.0.0/favicon/favicon-16x16.png" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@1.0.0/favicon/favicon.ico" />
+<link rel="manifest" href='https://xia0ne.github.io/site.webmanifest' /><meta property="og:title" content="Web | DSRBLOG" />
+<meta name="twitter:title" content="Web | DSRBLOG" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xia0ne.github.io/code/web/" /><meta property="og:description" content="计算机网络笔记。" />
+<meta name="twitter:description" content="计算机网络笔记。" /><meta property="og:image" content="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@1.0.0/opengraph/dsrkafuu.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@1.0.0/opengraph/dsrkafuu.jpg" /><meta property="article:published_time" content="2019-06-12T12:25:32+08:00" /><meta property="article:modified_time" content="2022-03-22T01:23:02+08:00" />
+<link rel="alternate" type="application/atom+xml" href='https://xia0ne.github.io/index.xml' /><link rel="stylesheet" href="https://xia0ne.github.io/styles/index.scss" />
+<script async
+  data-id="622765b4d76a4f3bbc91e39e"
+  data-host="https://analytics.dsrkafuu.cn:8443/"
+  src="https://cdn.jsdelivr.net/npm/dsr-analytics@0.11.0/dist/client.min.js"
+></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.26.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.26.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script defer src="https://xia0ne.github.io/js/index.js"></script>
+
+<script>window.$crisp=[];window.CRISP_WEBSITE_ID="abb1fc98-d4c5-475a-b93d-f017d7e47156";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+</head><body data-theme="auto" data-section="single"><header class="header">
+  
+
+  <nav class="navbar container">
+    <div class="navbar__brand">
+      <a class="navbar__item" href="https://xia0ne.github.io">DSRBLOG</a>
+    </div>
+
+    <div class="navbar__menu">
+      <div class="navbar__start"><a class="navbar__item" href="https://xia0ne.github.io/post/">文章</a><a class="navbar__item navbar__item--active" href="https://xia0ne.github.io/code/">笔记</a><a class="navbar__item" href="https://xia0ne.github.io/friends/">友链</a><a class="navbar__item" href="https://xia0ne.github.io/playlist/">番剧</a></div>
+
+      <div class="navbar__end">
+        <a class="navbar__item" href='https://xia0ne.github.io/index.xml' target="_blank" rel="noopener"><svg class='icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <path d="M303.74 463.21c-8.35-154.6-132.18-278.59-286.95-286.95A16 16 0 0 0 0 192.25v48.07a16 16 0 0 0 14.89 16c111.83 7.28 201.47 96.7 208.77 208.77a16 16 0 0 0 16 14.89h48.07a16 16 0 0 0 16-16.79zM16.5 32A16 16 0 0 0 0 48v48.08a16 16 0 0 0 15.45 16c191.18 7.84 344.63 161.32 352.47 352.47a16 16 0 0 0 16 15.45H432a16 16 0 0 0 16-16.5C439.6 229.68 251.46 40.45 16.5 32z" class="fa-secondary" />
+  <path d="M0 416a64 64 0 1 1 64 64 64 64 0 0 1-64-64z" />
+</svg>
+</a>
+        <div class="navbar__item navbar__toc" id="toc-btn"><svg class='icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <path d="M16 288h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16z" class="fa-secondary" />
+  <path d="M432 384H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H16A16 16 0 0 0 0 80v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16z" />
+</svg>
+</div>
+      </div>
+  </nav>
+</header>
+<main class="main">
+    <div class="container">
+      <div class="content">
+        <div class="content__inner post__article">
+          <div class="card"><div class="post__title">
+              <h2>Web</h2>
+            </div><div class="post__meta">
+  <span class="post__metaDate"><svg class='icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <path d="M0 192v272a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V192zm192 176a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16v-96a16 16 0 0 1 16-16h96a16 16 0 0 1 16 16zm112-240h32a16 16 0 0 0 16-16V16a16 16 0 0 0-16-16h-32a16 16 0 0 0-16 16v96a16 16 0 0 0 16 16zm-192 0h32a16 16 0 0 0 16-16V16a16 16 0 0 0-16-16h-32a16 16 0 0 0-16 16v96a16 16 0 0 0 16 16z" class="fa-secondary" />
+  <path d="M448 112v80H0v-80a48 48 0 0 1 48-48h48v48a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16V64h128v48a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16V64h48a48 48 0 0 1 48 48z" />
+</svg>
+<time>2019-06-12</time></span><span class="post__metaWords"><svg class='icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+  <path d="M384 128H272a16 16 0 0 1-16-16V0H24A23.94 23.94 0 0 0 0 23.88V488a23.94 23.94 0 0 0 23.88 24H360a23.94 23.94 0 0 0 24-23.88V128zm-96 244a12 12 0 0 1-12 12H108a12 12 0 0 1-12-12v-8a12 12 0 0 1 12-12h168a12 12 0 0 1 12 12zm0-64a12 12 0 0 1-12 12H108a12 12 0 0 1-12-12v-8a12 12 0 0 1 12-12h168a12 12 0 0 1 12 12zm0-64a12 12 0 0 1-12 12H108a12 12 0 0 1-12-12v-8a12 12 0 0 1 12-12h168a12 12 0 0 1 12 12z" class="fa-secondary" />
+  <path d="M377 105L279.1 7a24 24 0 0 0-17-7H256v112a16 16 0 0 0 16 16h112v-6.1a23.9 23.9 0 0 0-7-16.9zM276 352H108a12 12 0 0 0-12 12v8a12 12 0 0 0 12 12h168a12 12 0 0 0 12-12v-8a12 12 0 0 0-12-12zm0-64H108a12 12 0 0 0-12 12v8a12 12 0 0 0 12 12h168a12 12 0 0 0 12-12v-8a12 12 0 0 0-12-12zm0-64H108a12 12 0 0 0-12 12v8a12 12 0 0 0 12 12h168a12 12 0 0 0 12-12v-8a12 12 0 0 0-12-12z" />
+</svg>
+2891 字</span><span class="post__metaMinutes"><svg class='icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+  <path d="M384 128H272a16 16 0 0 1-16-16V0H24A23.94 23.94 0 0 0 0 23.88V488a23.94 23.94 0 0 0 23.88 24H360a23.94 23.94 0 0 0 24-23.88V128zm-96 244a12 12 0 0 1-12 12H108a12 12 0 0 1-12-12v-8a12 12 0 0 1 12-12h168a12 12 0 0 1 12 12zm0-64a12 12 0 0 1-12 12H108a12 12 0 0 1-12-12v-8a12 12 0 0 1 12-12h168a12 12 0 0 1 12 12zm0-64a12 12 0 0 1-12 12H108a12 12 0 0 1-12-12v-8a12 12 0 0 1 12-12h168a12 12 0 0 1 12 12z" class="fa-secondary" />
+  <path d="M377 105L279.1 7a24 24 0 0 0-17-7H256v112a16 16 0 0 0 16 16h112v-6.1a23.9 23.9 0 0 0-7-16.9zM276 352H108a12 12 0 0 0-12 12v8a12 12 0 0 0 12 12h168a12 12 0 0 0 12-12v-8a12 12 0 0 0-12-12zm0-64H108a12 12 0 0 0-12 12v8a12 12 0 0 0 12 12h168a12 12 0 0 0 12-12v-8a12 12 0 0 0-12-12zm0-64H108a12 12 0 0 0-12 12v8a12 12 0 0 0 12 12h168a12 12 0 0 0 12-12v-8a12 12 0 0 0-12-12z" />
+</svg>
+6 分钟</span>
+</div>
+<div class="post__content">
+              <article class="markdown">
+                <h2 id="osi-七层与-tcpip-四层模型">OSI 七层与 TCP/IP 四层模型</h2>
+<ul>
+<li>
+<p>OSI：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层</p>
+</li>
+<li>
+<p>TCP/IP：数据链路层、网络层、传输层、应用层</p>
+</li>
+<li>
+<p>物理层：原始比特流传输</p>
+</li>
+<li>
+<p>数据链路层：原始比特流到逻辑信号之间的转换</p>
+</li>
+<li>
+<p>网络层：IP 协议</p>
+</li>
+<li>
+<p>传输层：TCP 和 UDP</p>
+</li>
+<li>
+<p>会话层：SSL</p>
+</li>
+<li>
+<p>应用层：HTTP 和 FTP</p>
+</li>
+</ul>
+<h2 id="tcp-协议">TCP 协议</h2>
+<h3 id="三次握手">三次握手</h3>
+<ol>
+<li>起初两端都处于 <code>CLOSED</code> 状态，客户端向服务端发送 SYN 包等待服务端确认，客户端进入 <code>SYN-SENT</code> 状态</li>
+<li>服务端发回 SYN + ACK 包确认连接请求，进入 <code>SYN-RCVD</code> 状态</li>
+<li>客户端收到确认，向服务端发送 ACK 包确认建立连接，此时两端都处于 <code>ESTABLISHED</code> 状态</li>
+</ol>
+<p>四次挥手与三次握手类似，区别是服务端再发回确认时分为两次；第一次先发送 ACK 确认客户端发来的 FIN 包，第二次发送服务端的 FIN 包等待 ACK。</p>
+<h3 id="为什么是三次">为什么是三次</h3>
+<ul>
+<li>为了实现可靠传输，协议双方都必须发送带有序列号的包，三次握手过程中则是 <code>1000 =&gt; 1001+2000 =&gt; 2001</code>；而为了保证双方都有发出的序列号并且都被确认，至少要三次连接才能完成</li>
+<li>防止客户端认为已失效的连接请求传送到服务器端，但服务端却接受了导致错误</li>
+</ul>
+<h3 id="数据传输">数据传输</h3>
+<ul>
+<li>使用校验和、确认应答机制和重传机制来保证可靠传输</li>
+<li>使用滑动窗口机制来实现流量控制，通过动态改变窗口的大小进行拥塞控制</li>
+</ul>
+<h2 id="udp-协议">UDP 协议</h2>
+<p>无连接 (握手)；不可靠传输，无流量控制和拥塞控制，支持一对多、多对多等通信；应用于部分游戏等。</p>
+<p>QUIC 和 WebRTC 基于 RUDP。</p>
+<h2 id="输入-url-到页面加载">输入 URL 到页面加载</h2>
+<ol>
+<li>DNS 解析</li>
+<li>TCP 连接</li>
+<li>发送 HTTP 请求</li>
+<li>服务器处理请求并返回 HTTP 响应</li>
+<li>浏览器解析渲染页面</li>
+<li>断开 TCP 连接</li>
+</ol>
+<h2 id="dns-解析过程">DNS 解析过程</h2>
+<p>以 <code>baidu.com</code> 为例：</p>
+<ol>
+<li>本地 DNS 缓存</li>
+<li>本地 DNS 服务器</li>
+<li>根 DNS 服务器</li>
+<li><code>com</code> 域 DNS 服务器</li>
+<li><code>baidu.com</code> 域 DNS 服务器</li>
+<li>(CNAME 到 CDN 域名服务器请求解析)</li>
+</ol>
+<h2 id="浏览器渲染页面的过程">浏览器渲染页面的过程</h2>
+<h3 id="webkit-渲染过程">WebKit 渲染过程</h3>
+<ol>
+<li>首先通过请求得到 HTML</li>
+<li>解析 HTML 生成 DOM 树</li>
+<li>遇见 CSS、图片等则异步加载，不会阻塞 DOM 树的生成</li>
+<li>遇见普通的 JS (<code>&lt;script&gt;</code>) 则阻塞 DOM 树加载，等到 JS 加载且执行完后继续生成 DOM 树</li>
+<li>将 DOM 树 和 CSS 规则树合并到一起生成渲染树</li>
+<li>遍历渲染树计算节点的信息并绘制到屏幕</li>
+</ol>
+<h3 id="async-和-defer">async 和 defer</h3>
+<ul>
+<li><code>async</code>：异步下载，执行时阻塞，可能在任何时候执行，顺序与定义先后无关</li>
+<li><code>defer</code>：异步下载，直到 DOMContentLoaded 触发前才执行，顺序由定义先后决定</li>
+<li>动态插入：除非显式设置 <code>false</code>，否则类似 <code>async</code></li>
+<li>一起使用：<code>async</code> 优先，浏览器不支持时回退到 <code>defer</code></li>
+</ul>
+<h3 id="repaint-和-reflow-回流">repaint 和 reflow (回流)</h3>
+<ol>
+<li>repaint 是屏幕中一部分的内容重新渲染</li>
+<li>reflow 则是因为某些元素的尺寸或存在与否改变了，因此需要重新计算相关联的所有渲染树</li>
+<li>reflow 必然带来 repaint，但 repaint 不一定会带来 reflow</li>
+</ol>
+<p>获取一个元素的 <code>scrollTop</code> 和 <code>offsetTop</code> 之类的属性时，浏览器为了保证值的正确也会回流取得最新的值。</p>
+<h2 id="http">HTTP</h2>
+<p>超文本传输协议，本质是无状态的，使用 Cookies 可以创建有状态的会话；一般基于 TCP/IP 协议，默认端口 80；分为请求和响应两个部分。</p>
+<h3 id="http-请求">HTTP 请求</h3>
+<pre><code>GET / HTTP/1.1
+Host: developer.mozilla.org
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:77.0) Gecko/20100101 Firefox/77.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate, br
+Cookie: dwf_sg_task_completion=False; _ga=GA1.2.2100708258.1587297770
+</code></pre>
+<ul>
+<li>HTTP 方法：GET、POST、OPTIONS 等</li>
+<li>资源路径和 HTTP 协议版本号</li>
+<li>其他 headers</li>
+<li>如果是例如 POST，还会包含发送的信息</li>
+<li><code>Connection: keep-alive</code>：保持该网络连接打开</li>
+</ul>
+<h3 id="http-响应">HTTP 响应</h3>
+<pre><code>HTTP/2 200 OK
+Content-Type: image/png
+Content-Length: 63794
+Last-Modified: Tue, 17 Dec 2019 00:26:34 GMT
+Cache-Control: public,max-age=31536000,immutable
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh&quot;&gt;
+...
+</code></pre>
+<ul>
+<li>HTTP 版本号</li>
+<li>状态码和状态信息：一般由三位构成
+<ul>
+<li><code>1xx</code> 表示请求已经接受</li>
+<li><code>2xx</code> 表示请求已经处理</li>
+<li><code>3xx</code> 重定向</li>
+<li><code>4xx</code> 一般为客户端错误</li>
+<li><code>5xx</code> 一般为服务器错误</li>
+<li>常见的：<code>200 OK</code>；<code>403 Forbidden</code>；<code>404 Not Found</code>；<code>502 Bad Gateway</code></li>
+</ul>
+</li>
+<li>其他 headers</li>
+<li>信息</li>
+</ul>
+<h3 id="重定向链接的区别">重定向链接的区别</h3>
+<ul>
+<li><code>301</code>：永久重定向，浏览器可以做缓存</li>
+<li><code>302</code>：临时重定向，下次访问依旧用重定向之前的链接</li>
+<li><code>307</code>：类似临时重定向，不允许请求变为 GET 类型</li>
+<li><code>308</code>：类似永久重定向，不允许请求变为 GET 类型</li>
+</ul>
+<h3 id="常见的信息头">常见的信息头</h3>
+<ul>
+<li>Host：服务器域名</li>
+<li>User-Agent：UA</li>
+<li>Cookie：Cookie 会一直被携带在 HTTP 请求内发送给服务器，<code>localStorage</code> 和 <code>sessionStorage</code> 仅和浏览器本地有关，且 <code>sessionStorage</code> 仅在当前浏览器窗口关闭之前有效</li>
+<li><code>Cache-Control</code>，<code>If-Modified-Since</code>，<code>Etag</code>，<code>If-None-Match</code>：HTTP 缓存相关</li>
+</ul>
+<h3 id="http-缓存机制">HTTP 缓存机制</h3>
+<ul>
+<li>
+<p>发送 HTTP 请求时首先检查浏览器缓存 (是否存在或是否过期)</p>
+<ul>
+<li>缓存有效则直接从缓存中得到资源 (强缓存)</li>
+<li>缓存无效检查是否有 <code>Etag</code> 或 <code>Last-Modified</code>
+<ul>
+<li>有 <code>Etag</code> 则带 <code>If-None-Match</code> 请求资源</li>
+<li>有 <code>Last-Modified</code> 则带 <code>If-Modified-Since</code> 请求资源
+<ul>
+<li><code>304 Not Modified</code> (协商缓存) 或 <code>200 OK</code></li>
+</ul>
+</li>
+<li>无则直接请求资源
+<ul>
+<li><code>200 OK</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>no-cache</code>：可携带 Etag 相关头实现 304 协商缓存，无强缓存</p>
+</li>
+<li>
+<p><code>no-store</code>：无任何缓存</p>
+</li>
+</ul>
+<h3 id="https-过程">HTTPS 过程</h3>
+<p>通过 TLS 协议对 HTTP 进行加密。</p>
+<ol>
+<li>客户端发送 HTTPS 请求，并发送支持的密钥算法</li>
+<li>服务端选择一种算法返回证书 (非对称加密)</li>
+<li>客户端验证证书的有效性，生成随机密码，并用证书公钥加密随机密码发送给服务端</li>
+<li>服务端接收到随机密码，用私钥解密，并用这个密码加密数据发送给客户端</li>
+<li>客户端用随机密码解密传来的数据 (对称加密)</li>
+</ol>
+<p>非对称加密：公钥加密私钥解密</p>
+<h2 id="http-版本进步">HTTP 版本进步</h2>
+<h3 id="http09">HTTP/0.9</h3>
+<p>相当原始的 HTTP 版本，仅支持 <code>GET</code> HTML。</p>
+<h3 id="http10">HTTP/1.0</h3>
+<ul>
+<li>添加了 <code>POST</code>、<code>HEAD</code> 等请求</li>
+<li><code>Content-Type</code>：文件类型支持</li>
+<li>缓存支持</li>
+</ul>
+<h3 id="http11">HTTP/1.1</h3>
+<ul>
+<li><code>Connection: keep-alive</code> 的默认支持</li>
+<li>添加了 <code>PUT</code>、<code>PATCH</code>、<code>OPTIONS</code>、<code>DELETE</code> 等请求</li>
+<li>新增了很多头字段、状态码</li>
+</ul>
+<h3 id="http2">HTTP/2</h3>
+<ul>
+<li>服务端推送：PUSH 方法；例如请求 <code>.html</code> 时服务端主动尝试返回 <code>.css</code> 和 <code>.js</code> 等资源</li>
+<li>多路复用：尝试将多个 HTTP 请求合并一起发送；在 HTTP/1.1 中，<code>keep-alive</code> 可以使 TCP 连接保持打开，但数据传输依旧是 <code>请求 A =&gt; 响应 A =&gt; 请求 B =&gt; 响应 B</code> 的模式，而在 HTTP/2 中，就可以实现 <code>请求 A 和 B =&gt; 响应 A 和 B</code>；在使用 HTTP/2 的情况下，&ldquo;减少 HTTP 请求&rdquo; 这类的性能优化并不一定在所有情况下都能有效</li>
+<li>首部压缩：HTTP 头 压缩</li>
+<li>二进制分帧：将信息分割为更小的帧，并对它们采用二进制编码，其中例如 HTTP 头会被封装到 Headers 帧</li>
+</ul>
+<h2 id="cookie-和-session">Cookie 和 Session</h2>
+<ol>
+<li>浏览器首次请求</li>
+<li>服务器生成 Session 并保存，响应返回特定包含 Session 信息的 Cookie</li>
+<li>浏览器再次请求带有这个 Cookie</li>
+<li>服务器查询 Session 判断身份</li>
+</ol>
+<p>区别：</p>
+<p>Session 是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在内存、数据库、文件中；Cookie 是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现 Session 的一种方式。</p>
+<h2 id="跨域">跨域</h2>
+<p>同源策略：协议、端口、域名都相同</p>
+<ol>
+<li>JSONP 利用 <code>script</code> 标签没有跨域限制的特性，让服务器发回可执行的 JS 代码（函数），其参数就是要获取的数据。例如搜狐的当前城市 API，返回的就是 <code>var returnCitySN = {}</code></li>
+<li>手动设置 <code>document.domain</code>，实现二级域名相同</li>
+<li><code>frame.postMessage({})</code></li>
+<li>CORS</li>
+</ol>
+<p>CORS 分为简单请求和需预检的请求：</p>
+<p>使用 GET、POST 或 HEAD 方法，请求头的类型和 <code>Content-Type</code> 都在限定内的会发出简单请求：</p>
+<ul>
+<li>浏览器直接发送带有 <code>Origin</code> 头的请求</li>
+<li>对于没有 cookie 的请求，服务器响应：
+<ul>
+<li><code>Access-Control-Allow-Origin</code>：<code>*</code> 或与 <code>Origin</code> 的值相同</li>
+</ul>
+</li>
+<li>对于具有凭据的请求，服务器应该设置：
+<ul>
+<li><code>Access-Control-Allow-Origin</code>：与 <code>Origin</code> 的相同</li>
+<li><code>Access-Control-Allow-Credentials</code>：<code>true</code></li>
+</ul>
+</li>
+</ul>
+<p>需预检的请求：</p>
+<ul>
+<li>浏览器将具有以下 header 的 OPTIONS 请求发送到相同的 URL：
+<ul>
+<li><code>Access-Control-Request-Method</code>：请求方法</li>
+<li><code>Access-Control-Request-Headers</code>：以逗号分隔的 header 列表</li>
+</ul>
+</li>
+<li>服务器响应：
+<ul>
+<li>HTTP 状态码：<code>200</code></li>
+<li><code>Access-Control-Allow-Methods</code>：允许方法的列表</li>
+<li><code>Access-Control-Allow-Headers</code>：允许 header 的列表</li>
+<li><code>Access-Control-Max-Age</code>：缓存秒数</li>
+</ul>
+</li>
+</ul>
+<p>预检通过后才发出实际请求，与简单请求流程相同。</p>
+
+              </article>
+            </div>
+            <div class="license markdown">
+              <blockquote>本站内容采用 CC BY-NC-SA 4.0 许可，请注明出处；商业转载请联系作者授权。</blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar__inner"><div class="card info">
+  <div class="info__avatar">
+    <div class="fiximg">
+      <div class="fiximg__container" style="padding-bottom: 100%;">
+        <img loading="lazy" src="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@1.0.0/avatar/dsrkafuu_256p.webp" />
+      </div>
+    </div>
+  </div>
+  <div class="info__meta">
+    <span class="info__metaName">DSRKafuU</span>
+  </div>
+  <div class="info__counter">
+    <div class="info__counterItem"><span class="info__counterData">48</span>
+      <span class="info__counterName">千字</span>
+    </div>
+    <div class="info__counterItem">
+      <span class="info__counterData">37</span>
+      <span class="info__counterName">文章</span>
+    </div>
+  </div>
+</div>
+
+<div class="card links"><a class="links__item" href="https://github.com/dsrkafuu" target="_blank" rel="noopener"><svg class='icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+  <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+</svg>
+</a><a class="links__item" href="https://twitter.com/dsrkafuu" target="_blank" rel="noopener"><svg class='icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+</svg>
+</a><a class="links__item" href="https://steamcommunity.com/id/dsrkafuu/" target="_blank" rel="noopener"><svg class='icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+  <path d="M496 256c0 137-111.2 248-248.4 248-113.8 0-209.6-76.3-239-180.4l95.2 39.3c6.4 32.1 34.9 56.4 68.9 56.4 39.2 0 71.9-32.4 70.2-73.5l84.5-60.2c52.1 1.3 95.8-40.9 95.8-93.5 0-51.6-42-93.5-93.7-93.5s-93.7 42-93.7 93.5v1.2L176.6 279c-15.5-.9-30.7 3.4-43.5 12.1L0 236.1C10.2 108.4 117.1 8 247.6 8 384.8 8 496 119 496 256zM155.7 384.3l-30.5-12.6a52.79 52.79 0 0 0 27.2 25.8c26.9 11.2 57.8-1.6 69-28.4 5.4-13 5.5-27.3.1-40.3-5.4-13-15.5-23.2-28.5-28.6-12.9-5.4-26.7-5.2-38.9-.6l31.5 13c19.8 8.2 29.2 30.9 20.9 50.7-8.3 19.9-31 29.2-50.8 21zm173.8-129.9c-34.4 0-62.4-28-62.4-62.3s28-62.3 62.4-62.3 62.4 28 62.4 62.3-27.9 62.3-62.4 62.3zm.1-15.6c25.9 0 46.9-21 46.9-46.8 0-25.9-21-46.8-46.9-46.8s-46.9 21-46.9 46.8c.1 25.8 21.1 46.8 46.9 46.8z" />
+</svg>
+</a></div>
+<div class="sticky"><div class="card toc markdown" id="toc-overlay"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#osi-七层与-tcpip-四层模型">OSI 七层与 TCP/IP 四层模型</a></li>
+    <li><a href="#tcp-协议">TCP 协议</a>
+      <ul>
+        <li><a href="#三次握手">三次握手</a></li>
+        <li><a href="#为什么是三次">为什么是三次</a></li>
+        <li><a href="#数据传输">数据传输</a></li>
+      </ul>
+    </li>
+    <li><a href="#udp-协议">UDP 协议</a></li>
+    <li><a href="#输入-url-到页面加载">输入 URL 到页面加载</a></li>
+    <li><a href="#dns-解析过程">DNS 解析过程</a></li>
+    <li><a href="#浏览器渲染页面的过程">浏览器渲染页面的过程</a>
+      <ul>
+        <li><a href="#webkit-渲染过程">WebKit 渲染过程</a></li>
+        <li><a href="#async-和-defer">async 和 defer</a></li>
+        <li><a href="#repaint-和-reflow-回流">repaint 和 reflow (回流)</a></li>
+      </ul>
+    </li>
+    <li><a href="#http">HTTP</a>
+      <ul>
+        <li><a href="#http-请求">HTTP 请求</a></li>
+        <li><a href="#http-响应">HTTP 响应</a></li>
+        <li><a href="#重定向链接的区别">重定向链接的区别</a></li>
+        <li><a href="#常见的信息头">常见的信息头</a></li>
+        <li><a href="#http-缓存机制">HTTP 缓存机制</a></li>
+        <li><a href="#https-过程">HTTPS 过程</a></li>
+      </ul>
+    </li>
+    <li><a href="#http-版本进步">HTTP 版本进步</a>
+      <ul>
+        <li><a href="#http09">HTTP/0.9</a></li>
+        <li><a href="#http10">HTTP/1.0</a></li>
+        <li><a href="#http11">HTTP/1.1</a></li>
+        <li><a href="#http2">HTTP/2</a></li>
+      </ul>
+    </li>
+    <li><a href="#cookie-和-session">Cookie 和 Session</a></li>
+    <li><a href="#跨域">跨域</a></li>
+  </ul>
+</nav></div></div>
+        </div>
+      </aside>
+    </div>
+  </main><footer class="footer">
+  <div class="container">
+    <span class="footer__text">Copyright &copy; 2018-2022 | <a class="link"
+      href="https://dsrkafuu.net" target="_blank" rel="noopener">DSRKafuU</a></span>
+    <span class="footer__text"><a class="link" href="https://github.com/dsrkafuu/dsr-blog" target="_blank"
+      rel="noopener">DSRBLOG</a> v7.1.0 | AGPL-3.0</a></span>
+  </div>
+</footer>
+</body></html>

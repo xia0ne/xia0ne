@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /code/
+Sitemap: https://xia0ne.github.io/sitemap.xml
