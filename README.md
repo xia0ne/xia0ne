@@ -11,6 +11,7 @@
 #### Languages
 ![](https://img.shields.io/badge/C++-00599C?logo=cplusplus&logoColor=fff)
 ![](https://img.shields.io/badge/C-00599C?logo=c&logoColor=fff)
+![](https://img.shields.io/badge/Goland-743ea2?logo=Goland&logoColor=fff)
 ![](https://img.shields.io/badge/Python-743ea2?logo=python&logoColor=fff)
 ![](https://img.shields.io/badge/Java-743ea2?logo=java&logoColor=fff)
 ![](https://img.shields.io/badge/JavaScript-00599C?logo=javascript&logoColor=fff)
