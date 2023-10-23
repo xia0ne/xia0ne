@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm YuRuiH</h1>
-<h3 align="center">Working towards Full Stack Development from China</h3>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&random=false&width=435&lines=Working+Towards+Backend+Development+from+China" alt="Typing SVG" /></a>
 <img align="right" height="141" src="https://github-readme-stats.vercel.app/api?username=xia0ne&theme=tokyonight&show_icons=true&count_private=true&hide_border=true">
 <!-- ![](https://github-readme-stats.vercel.app/api?username=zzyyyl&theme=tokyonight&show_icons=true&count_private=true) -->
 
