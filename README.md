@@ -26,4 +26,6 @@ Here are my disadvantage:
 #### OS
 [![os](https://skillicons.dev/icons?i=windows,linux,ios)](https://skillicons.dev)
 #### tools
-[![tools](https://skillicons.dev/icons?i=idea,vscode,pycharm,webstorm,git,postman,powershell,bash,vim,cloudflare)](https://skillicons.dev)
+[![tools](https://skillicons.dev/icons?i=idea,vscode,pycharm,webstorm)](https://skillicons.dev)  
+[![tools](https://skillicons.dev/icons?i=git,postman,powershell,bash)](https://skillicons.dev)  
+[![tools](https://skillicons.dev/icons?i=vim,cloudflare)](https://skillicons.dev)
