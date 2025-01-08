@@ -18,9 +18,11 @@ Here are my disadvantage:
 
 ### My Preference
 #### Languages
-[![Languages](https://skillicons.dev/icons?i=java,python,go,js,cpp,md)](https://skillicons.dev)
+[![Languages](https://skillicons.dev/icons?i=java,python,go,js)](https://skillicons.dev)  
+[![Languages](https://skillicons.dev/icons?i=cpp,md)](https://skillicons.dev)
 #### others
-[![others](https://skillicons.dev/icons?i=docker,redis,mysql,rabbitmq,nginx,spring,fastapi,astro)](https://skillicons.dev)
+[![others](https://skillicons.dev/icons?i=docker,redis,mysql,rabbitmq)](https://skillicons.dev)  
+[![others](https://skillicons.dev/icons?i=nginx,spring,fastapi,astro)](https://skillicons.dev)
 #### OS
 [![os](https://skillicons.dev/icons?i=windows,linux,ios)](https://skillicons.dev)
 #### tools
